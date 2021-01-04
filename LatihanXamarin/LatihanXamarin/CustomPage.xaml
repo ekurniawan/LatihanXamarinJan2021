@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LatihanXamarin.CustomPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Style="{x:DynamicResource TitleStyle}" Text="Title Style" />
+            <Label Style="{x:DynamicResource SubtitleStyle}" Text="Subtitle Style" />
+            <Label Style="{x:DynamicResource ListTitleStyle}" Text="My Custom Label" />
+            <Entry TextColor="White" x:Name="entryTrigger" Placeholder="insert name">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor">
+                            <Setter.Value>
+                                <OnPlatform x:TypeArguments="Color" iOS="Aqua" Android="OrangeRed" />
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Text">
+                            <Setter.Value>
+                                <OnPlatform x:TypeArguments="x:String" iOS="iOS" Android="Android" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+            
+            <ListView x:Name="lstData" HasUnevenRows="True" ItemTapped="lstData_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding Source}" WidthRequest="80" 
+                                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalOptions="Center"
+                                       HorizontalOptions="Center" />
+                                <Label Text="{Binding Title}" FontSize="Medium" FontAttributes="Bold"
+                                       Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+                                <Label Text="{Binding Description}" FontSize="Small" Grid.Column="1" Grid.Row="1" 
+                                       VerticalOptions="Center" />
+                                <Label Text="{Binding Price,StringFormat='${N0}'}" FontSize="Small" Grid.Column="1" Grid.Row="2"
+                                       VerticalOptions="Center" />
+                                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Button Text="Edit" FontSize="Small" CommandParameter="{Binding Title}" Clicked="Button_Clicked" />
+                                    <Button Text="Delete" FontSize="Small" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
