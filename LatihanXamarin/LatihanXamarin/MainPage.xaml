@@ -49,7 +49,8 @@
             </StackLayout>
             <Entry x:Name="entryData" Placeholder="Data yang dikirimkan :" FontSize="Medium" />
             <Button x:Name="btnKirimData" Text="Kirim Data" Clicked="btnKirimData_Clicked" />
-
+            <Button x:Name="btnCekAppCurrent" Text="Cek App Current" Clicked="btnCekAppCurrent_Clicked" />
+            <Button x:Name="btnBuatPReference" Text="Buat Preference" Clicked="btnBuatPReference_Clicked" />
         </StackLayout>
     </ScrollView>
     

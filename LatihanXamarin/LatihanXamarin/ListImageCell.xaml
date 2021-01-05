@@ -14,6 +14,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button x:Name="btnCekGlobal" Text="Cek Global" Clicked="btnCekGlobal_Clicked" />
+            <Button x:Name="btnCekAppCurrent" Text="Cek App Current" Clicked="btnCekAppCurrent_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

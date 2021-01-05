@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace LatihanXamarin
@@ -55,6 +56,34 @@ namespace LatihanXamarin
             Global.Instance.myData = entryData.Text;
 
             await Navigation.PushAsync(myPage);
+        }
+
+        private async void btnCekAppCurrent_Clicked(object sender, EventArgs e)
+        {
+            if (!Application.Current.Properties.ContainsKey("data"))
+            {
+                Application.Current.Properties["data"] = entryData.Text;
+                await DisplayAlert("Keterangan", "App Current berhasil dibuat", "OK");
+            } 
+            else
+            {
+                var data = Application.Current.Properties["data"].ToString();
+                await DisplayAlert("Keterangan", $"Nilainya: {data}", "OK");
+            }
+        }
+
+        private async void btnBuatPReference_Clicked(object sender, EventArgs e)
+        {
+            if (!Preferences.ContainsKey("mydata"))
+            {
+                Preferences.Set("mydata", entryData.Text);
+                await DisplayAlert("Keterangan", "Create Preferences", "OK");
+            }
+            else
+            {
+                var data = Preferences.Get("mydata", "default");
+                await DisplayAlert("Keterangan", $"Data: {data}", "OK");
+            }
         }
     }
 }

@@ -59,5 +59,17 @@ namespace LatihanXamarin
         {
             await DisplayAlert("Keterangan", $"Nilai global {Global.Instance.myData}", "OK");
         }
+
+        private async void btnCekAppCurrent_Clicked(object sender, EventArgs e)
+        {
+            if (Application.Current.Properties.ContainsKey("data"))
+            {
+                await DisplayAlert("App Current", $"Data : {Application.Current.Properties["data"].ToString()}", "OK");
+            }
+            else
+            {
+                await DisplayAlert("App Current", "Kosong", "OK");
+            }
+        }
     }
 }
