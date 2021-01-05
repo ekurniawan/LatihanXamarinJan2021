@@ -19,6 +19,9 @@ namespace LatihanXamarin
             this.BindingContext = new ContactViewModel();
         }
 
-       
+        private async void btnListImageCell_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListImageCell());
+        }
     }
 }

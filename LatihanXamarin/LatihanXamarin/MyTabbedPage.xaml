@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LatihanXamarin.MyTabbedPage"
+             xmlns:local="clr-namespace:LatihanXamarin"  
+            Title="My Tabbed" NavigationPage.HasNavigationBar="False">
+  <!--Pages can be added as references or inline-->
+    <local:CustomPage IconImageSource="add.png" />
+    <local:ListImageCell IconImageSource="add.png" />
+    <ContentPage Title="Tab 3">
+        <StackLayout>
+            <Button x:Name="btnActionSheet" Clicked="btnActionSheet_Clicked" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Tab 4">
+        <StackLayout>
+            <Button x:Name="btnDisplayAlert" Clicked="btnDisplayAlert_Clicked" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Tab 5">
+        <StackLayout>
+            <Label Text="Ini Tab 3" FontSize="Large" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Tab 6">
+        <StackLayout>
+            <Label Text="Ini Tab 3" FontSize="Large" />
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

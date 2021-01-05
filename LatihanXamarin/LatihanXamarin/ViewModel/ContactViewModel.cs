@@ -74,6 +74,8 @@ namespace LatihanXamarin.ViewModel
         public Command BukaWebsiteCommand { get; set; }
         public Command SimpanDataContact { get; set; }
 
+        public Command TextChangeCommand { get; set; }
+
         public ContactViewModel()
         {
             BukaWebsiteCommand = new Command(BukaWebsite);

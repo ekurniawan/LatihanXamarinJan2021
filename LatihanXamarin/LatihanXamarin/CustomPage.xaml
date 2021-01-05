@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LatihanXamarin.CustomPage">
+             x:Class="LatihanXamarin.CustomPage" Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
             <Label Style="{x:DynamicResource TitleStyle}" Text="Title Style" />
@@ -23,8 +23,10 @@
                     </Trigger>
                 </Entry.Triggers>
             </Entry>
-            
-            <ListView x:Name="lstData" HasUnevenRows="True" ItemTapped="lstData_ItemTapped">
+
+            <ListView ItemsSource="{Binding ListItems}" HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsBusy,Mode=OneWay}"
+                      RefreshCommand="{Binding GetListItems}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

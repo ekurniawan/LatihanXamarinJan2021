@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LatihanXamarin.ContactPage">
+             x:Class="LatihanXamarin.ContactPage" Title="Contact Page">
     <ContentPage.Content>
         <StackLayout Padding="10" Spacing="10">
             <Label Text="Name" />
@@ -21,6 +21,7 @@
             <Button Text="Simpan Data Contact" Command="{Binding SimpanDataContact}"/>
             <ActivityIndicator IsRunning="{Binding IsBusy}" />
 
+            <Button x:Name="btnListImageCell" Text="List Image" Clicked="btnListImageCell_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

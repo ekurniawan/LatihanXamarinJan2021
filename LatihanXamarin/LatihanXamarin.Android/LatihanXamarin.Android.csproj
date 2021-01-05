@@ -54,6 +54,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Refractored.MvvmHelpers">
+      <Version>1.6.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.1.1.1-beta</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
@@ -86,13 +92,16 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <AndroidResource Include="Resources\drawable\monkey1.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LatihanXamarin\LatihanXamarin.csproj">
       <Project>{FFAC8261-5BEA-449A-A21C-C412914F9CDB}</Project>
       <Name>LatihanXamarin</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

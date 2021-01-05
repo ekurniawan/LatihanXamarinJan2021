@@ -29,6 +29,26 @@ namespace LatihanXamarin
             lstData.ItemsSource = lstItems;
         }
 
+        private string _data;
+        public ListImageCell(string data)
+        {
+            InitializeComponent();
+
+            List<ListItem> lstItems = new List<ListItem>
+            {
+                new ListItem{Title="Xamarin for Android",Description="Xamarin for Android",
+                 Source="https://freepngimg.com/thumb/youtube/6-2-youtube-png-picture.png"},
+                new ListItem{Title="Xamarin for IOS",Description="Xamarin for IOS",
+                 Source="https://freepngimg.com/thumb/youtube/6-2-youtube-png-picture.png"},
+                new ListItem{Title="Xamarin Forms",Description="Xamarin Forms",
+                    Source="https://freepngimg.com/thumb/youtube/6-2-youtube-png-picture.png"}
+            };
+            lstData.ItemsSource = lstItems;
+
+            _data = data;
+            lblKeterangan.Text = $"Data yg dikirimkan {_data}";
+        }
+
         private void lstData_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var data = (ListItem)e.Item;

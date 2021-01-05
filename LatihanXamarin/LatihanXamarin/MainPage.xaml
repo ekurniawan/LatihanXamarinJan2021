@@ -1,13 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LatihanXamarin.MainPage">
-
+             x:Class="LatihanXamarin.MainPage" Title="Main Page">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolbarContact" Text="Contact Page" Order="Secondary" Clicked="toolbarContact_Clicked" />
+        <ToolbarItem x:Name="toolbarCustom" Text="Custom List" Order="Secondary" Clicked="toolbarCustom_Clicked" />
+        <ToolbarItem x:Name="toolbarAdd" IconImageSource="add.png" Order="Primary" Clicked="toolbarAdd_Clicked" />
+    </ContentPage.ToolbarItems>
     <ScrollView>
         <StackLayout>
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                 <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
+            <ScrollView Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />  
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />
+                    <Image Source="add.png" WidthRequest="35" />
+                </StackLayout>
+            </ScrollView>
             <Label Text="Hello Xamarin Forms" FontSize="Title" Padding="30,10,30,10"/>
             <Label Text="Belajar Xamarin Forms" FontSize="16" Padding="30,0,30,0"/>
             <Label FontSize="16" Padding="30,24,30,0">
@@ -26,11 +44,12 @@
                 <Entry x:Name="entryFirstName" Placeholder="Insert Firstname" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnSubmit" Text="Submit" />
-                <Button Text="Submit" />
+                <Button x:Name="btnContact" Text="Contact Page" Clicked="btnContact_Clicked" />
+                <Button x:Name="btnCustomList" Text="Custom List" Clicked="btnCustomList_Clicked" />
             </StackLayout>
+            <Entry x:Name="entryData" Placeholder="Data yang dikirimkan :" FontSize="Medium" />
+            <Button x:Name="btnKirimData" Text="Kirim Data" Clicked="btnKirimData_Clicked" />
 
-            
         </StackLayout>
     </ScrollView>
     
