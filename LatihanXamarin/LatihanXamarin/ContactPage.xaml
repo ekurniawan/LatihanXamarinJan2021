@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LatihanXamarin.ContactPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10" Spacing="10">
             <Label Text="Name" />
             <Entry Text="{Binding Name}" Placeholder="Full Name" />
             <Label Text="Website" />
@@ -15,6 +15,12 @@
             </StackLayout>
 
             <Label Text="{Binding DisplayMessage}" />
+
+           
+            <Button Text="Buka Website" Command="{Binding BukaWebsiteCommand}" />
+            <Button Text="Simpan Data Contact" Command="{Binding SimpanDataContact}"/>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

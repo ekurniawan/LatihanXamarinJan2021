@@ -18,5 +18,7 @@ namespace LatihanXamarin
             InitializeComponent();
             this.BindingContext = new ContactViewModel();
         }
+
+       
     }
 }
