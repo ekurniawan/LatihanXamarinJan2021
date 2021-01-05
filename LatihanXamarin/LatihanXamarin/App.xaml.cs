@@ -11,7 +11,7 @@ namespace LatihanXamarin
         {
             InitializeComponent();
 
-            MainPage = new CustomPage();
+            MainPage = new ContactPage();
         }
 
         protected override void OnStart()
