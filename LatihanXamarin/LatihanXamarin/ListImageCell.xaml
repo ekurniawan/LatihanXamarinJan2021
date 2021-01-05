@@ -13,6 +13,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="btnCekGlobal" Text="Cek Global" Clicked="btnCekGlobal_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

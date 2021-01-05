@@ -54,5 +54,10 @@ namespace LatihanXamarin
             var data = (ListItem)e.Item;
             DisplayAlert("Keterangan", $"Title = {data.Title} Desc: {data.Description}", "OK");
         }
+
+        private async void btnCekGlobal_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Keterangan", $"Nilai global {Global.Instance.myData}", "OK");
+        }
     }
 }

@@ -51,6 +51,9 @@ namespace LatihanXamarin
         private async void btnKirimData_Clicked(object sender, EventArgs e)
         {
             var myPage = new ListImageCell(entryData.Text);
+
+            Global.Instance.myData = entryData.Text;
+
             await Navigation.PushAsync(myPage);
         }
     }
