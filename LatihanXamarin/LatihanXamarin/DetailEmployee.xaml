@@ -20,7 +20,7 @@
 
             <Label Text="Employee ID :" FontSize="Medium" HorizontalTextAlignment="End"
                    VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0"  />
-            <Entry Text="{Binding EmpId}" Placeholder="employee id" Grid.Row="0"
+            <Entry Text="{Binding EmpId}" IsEnabled="False" Placeholder="employee id" Grid.Row="0"
                    Grid.Column="1" VerticalOptions="Center" />
 
             <Label Text="Employee Name :" FontSize="Medium" HorizontalTextAlignment="End"
