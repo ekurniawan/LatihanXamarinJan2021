@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LatihanXamarin.AddEmployee" Title="{Binding Title}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Employee Name :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0"  />
+            <Entry Text="{Binding EmpName}" Placeholder="employee name" Grid.Row="0"
+                   Grid.Column="1" VerticalOptions="Center" />
+
+            <Label Text="Designation :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1" />
+            <Entry Text="{Binding Designation}" Placeholder="insert designation"
+                   Grid.Row="1" Grid.Column="1" />
+
+            <Label Text="Department :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="2" />
+            <Entry Text="{Binding Department}" Placeholder="insert department"
+                   Grid.Row="2" Grid.Column="1" />
+
+            <Label Text="Qualification :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="3" />
+            <Entry Text="{Binding Qualification}" Placeholder="insert qualification"
+                   Grid.Row="3" Grid.Column="1" />
+
+            <StackLayout Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" 
+                         Orientation="Horizontal" HorizontalOptions="End">
+                <Button Text="Add" Command="{Binding AddCommand}" />
+                <Button Text="Cancel" Command="{Binding CancelCommand}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

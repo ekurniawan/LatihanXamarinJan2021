@@ -29,13 +29,12 @@ namespace LatihanXamarin.ViewModel
             }
         }
 
-
         public ListItemViewModel()
         {
             Title = "Custom List View";
             ListItems = new ObservableCollection<ListItem>();
             IsBusy = false;
-            Task.Run(()=>this.GetListItemsMethod()).Wait();
+            //Task.Run(()=>this.GetListItemsMethod()).Wait();
             GetListItems = new Command(async ()=>await GetListItemsMethod());
             TextChangeCommand = new Command<string>(async (searchKeyword) => await TextChanged(searchKeyword));
         }

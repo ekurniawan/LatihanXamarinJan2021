@@ -26,7 +26,7 @@ namespace LatihanXamarin
 
 
             //MainPage = new NavigationPage(new MultilanguagePage());
-            MainPage = new MyPage();
+            MainPage = new NavigationPage(new MyPage());
         }
 
         protected override void OnStart()

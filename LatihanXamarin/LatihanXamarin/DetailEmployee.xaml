@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LatihanXamarin.DetailEmployee">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Employee ID :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0"  />
+            <Entry Text="{Binding EmpId}" Placeholder="employee id" Grid.Row="0"
+                   Grid.Column="1" VerticalOptions="Center" />
+
+            <Label Text="Employee Name :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1"  />
+            <Entry Text="{Binding EmpName}" Placeholder="employee name" Grid.Row="1"
+                   Grid.Column="1" VerticalOptions="Center" />
+
+            <Label Text="Designation :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="2" />
+            <Entry Text="{Binding Designation}" Placeholder="insert designation"
+                   Grid.Row="2" Grid.Column="1" />
+
+            <Label Text="Department :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="3" />
+            <Entry Text="{Binding Department}" Placeholder="insert department"
+                   Grid.Row="3" Grid.Column="1" />
+
+            <Label Text="Qualification :" FontSize="Medium" HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="4" />
+            <Entry Text="{Binding Qualification}" Placeholder="insert qualification"
+                   Grid.Row="4" Grid.Column="1" />
+
+            <StackLayout Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" 
+                         Orientation="Horizontal" HorizontalOptions="End">
+                <Button Text="Edit" Command="{Binding EditCommand}" />
+                <Button Text="Delete" Command="{Binding DeleteCommand}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

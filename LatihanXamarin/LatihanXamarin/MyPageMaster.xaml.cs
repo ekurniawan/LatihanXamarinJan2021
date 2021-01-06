@@ -35,10 +35,8 @@ namespace LatihanXamarin
                 {
                     new MyPageMasterMenuItem { Id = 0, Title = "Main Page", 
                         TargetType = typeof(MainPage),ImageIcon="add.png" },
-                    new MyPageMasterMenuItem { Id = 1, Title = "Custom Page",
-                        TargetType = typeof(CustomPage),ImageIcon="add.png"},
-                    new MyPageMasterMenuItem { Id = 2, Title = "Tabbed Page",
-                        TargetType=typeof(MyTabbedPage),ImageIcon="add.png"},
+                    new MyPageMasterMenuItem { Id = 2, Title = "Show Employee",
+                        TargetType=typeof(ShowEmployee),ImageIcon="add.png"},
                     new MyPageMasterMenuItem { Id = 3, Title = "Contact Page",
                         TargetType=typeof(ContactPage),ImageIcon="add.png"},
                     new MyPageMasterMenuItem { Id = 4, Title = "List Image",
