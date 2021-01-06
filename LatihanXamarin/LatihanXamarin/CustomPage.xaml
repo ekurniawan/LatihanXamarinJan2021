@@ -24,6 +24,8 @@
                 </Entry.Triggers>
             </Entry>
 
+
+            <Entry Placeholder="insert search keyword" Text="{Binding SearchKeyword}" />
             <ListView ItemsSource="{Binding ListItems}" HasUnevenRows="True"
                       IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsBusy,Mode=OneWay}"
                       RefreshCommand="{Binding GetListItems}">

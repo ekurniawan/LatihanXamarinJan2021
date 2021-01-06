@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace LatihanXamarin.ViewModel
 {
@@ -14,6 +15,20 @@ namespace LatihanXamarin.ViewModel
     {
         public ObservableCollection<ListItem> ListItems { get; set; }
         public ICommand GetListItems { get; }
+        public ICommand TextChangeCommand { get; }
+
+        private string searchKeyword;
+
+        public string SearchKeyword
+        {
+            get { return searchKeyword; }
+            set { 
+                searchKeyword = value;
+                TextChangeCommand.Execute(searchKeyword);
+                SetProperty(ref searchKeyword, value);
+            }
+        }
+
 
         public ListItemViewModel()
         {
@@ -22,6 +37,18 @@ namespace LatihanXamarin.ViewModel
             IsBusy = false;
             Task.Run(()=>this.GetListItemsMethod()).Wait();
             GetListItems = new Command(async ()=>await GetListItemsMethod());
+            TextChangeCommand = new Command<string>(async (searchKeyword) => await TextChanged(searchKeyword));
+        }
+
+        private async Task TextChanged(string searchKeyword)
+        {
+            if (searchKeyword.Length >= 3)
+            {
+                var data = ListItems.Where(l => l.Title.Contains(searchKeyword));
+                ListItems = new ObservableCollection<ListItem>(data);
+
+                await Application.Current.MainPage.DisplayAlert("Keterangan", "TextChanged", "OK");
+            }
         }
 
         async Task GetListItemsMethod()
