@@ -7,7 +7,7 @@
             <ListView ItemsSource="{Binding ListEmployees}" HasUnevenRows="True" 
                       IsPullToRefreshEnabled="True" 
                       IsRefreshing="{Binding IsBusy,Mode=OneWay}"
-                      RefreshCommand="{Binding GetListEmployeeMethod}">
+                      RefreshCommand="{Binding GetListEmployeeMethod}" ItemTapped="ListView_ItemTapped">
                 <ListView.Header>
                     <Grid>
                         <Grid.RowDefinitions>

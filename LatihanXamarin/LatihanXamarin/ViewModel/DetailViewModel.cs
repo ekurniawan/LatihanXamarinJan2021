@@ -2,14 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace LatihanXamarin.ViewModel
 {
     public class DetailViewModel : BaseViewModel
     {
+        public Command EditCommand { get; }
+        public Command DeleteCommand { get; }
+
         public DetailViewModel()
         {
-
+            Title = "Detail Employee";
         }
 
         private int empId;
