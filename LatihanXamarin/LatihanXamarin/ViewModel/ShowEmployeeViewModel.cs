@@ -29,6 +29,46 @@ namespace LatihanXamarin.ViewModel
             //Task.Run(()=>GetListEmployeeMethod()).Wait();
         }
 
+
+        public async Task DeleteCommandExecute()
+        {
+            try
+            {
+                var answer = await Application.Current.MainPage.DisplayAlert("Konfirmasi",
+                    "Apakah anda yakin akan delete data?", "Yes", "No");
+
+                if (!answer)
+                    return;
+
+                var deleteData = new Employee
+                {
+                    EmpId = this.EmpId
+                };
+
+                var result = _empDAL.Delete(deleteData);
+
+                if (result == 1)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Keterangan",
+                      $"Data Employee berhasil di delete", "OK");
+
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error",
+                        $"Error {ex.Message}", "OK");
+            }
+        }
+
+        private int empId;
+        public int EmpId
+        {
+            get { return empId; }
+            set { empId = value; SetProperty(ref empId, value); }
+        }
+
         async Task AddEmployeeCommandExecute()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new AddEmployee());

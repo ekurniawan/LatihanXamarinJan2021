@@ -44,6 +44,7 @@ namespace LatihanXamarin.ViewModel
                 {
                     await Application.Current.MainPage.DisplayAlert("Keterangan",
                       $"Data Employee berhasil di delete", "OK");
+
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
             }
@@ -69,8 +70,9 @@ namespace LatihanXamarin.ViewModel
                 var result = empDAL.Edit(editData);
                 if (result == 1)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Keterangan",
-                       $"Data Employee {editData.EmpName} berhasil di edit", "OK");
+                    //await Application.Current.MainPage.DisplayAlert("Keterangan",
+                    //   $"Data Employee {editData.EmpName} berhasil di edit", "OK");
+
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
             }
