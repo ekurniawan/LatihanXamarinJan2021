@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WindowsAzure.Messaging;
 using Xamarin.Forms;
 
 namespace LatihanXamarin.Droid.Models
@@ -23,6 +24,24 @@ namespace LatihanXamarin.Droid.Models
         public override void OnNewToken(string token)
         {
             base.OnNewToken(token);
+            System.Diagnostics.Debug.WriteLine(token);
+
+            var hub = new NotificationHub(
+                Konstanta.HubName,
+                Konstanta.HubConnectionString,
+                MainActivity.Context);
+
+            var registration = hub.Register(token, Konstanta.HubTagName);
+
+            var pnsHandle = registration.PNSHandle;
+            var templateReg = hub.RegisterTemplate(
+                pnsHandle,
+                "defaultTemplate",
+                Template,
+                Konstanta.HubTagName);
+
+            var receiver = DependencyService.Get<INotificationReceiver>();
+            receiver.RaiseNotificationReceived("Ready and registered...");
         }
 
         public override void OnMessageReceived(RemoteMessage remoteMessage)

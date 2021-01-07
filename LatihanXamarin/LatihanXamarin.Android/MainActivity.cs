@@ -18,8 +18,16 @@ namespace LatihanXamarin.Droid
     {
         private const string ChannelId = "ActualSolusi.Channel";
 
+        public static MainActivity Context
+        {
+            get;
+            private set;
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Context = this;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
