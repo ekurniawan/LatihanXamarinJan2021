@@ -1,4 +1,4 @@
-﻿using LatihanXamarin.Resources;
+using LatihanXamarin.Resources;
 using System;
 using System.Globalization;
 using System.Linq;
@@ -12,6 +12,7 @@ namespace LatihanXamarin
     //
     public partial class App : Application
     {
+        public static string BaseImageUrl { get; } = "https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/";
         public App()
         {
             //Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
@@ -26,7 +27,7 @@ namespace LatihanXamarin
 
 
             //MainPage = new NavigationPage(new MultilanguagePage());
-            MainPage = new TampilNotif();
+            MainPage = new NavigationPage(new MyPage());
         }
 
         protected override void OnStart()

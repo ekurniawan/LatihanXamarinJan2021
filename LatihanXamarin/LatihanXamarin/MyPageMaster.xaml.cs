@@ -36,7 +36,7 @@ namespace LatihanXamarin
                     new MyPageMasterMenuItem { Id = 0, Title = "Main Page", 
                         TargetType = typeof(MainPage),ImageIcon="add.png" },
                     new MyPageMasterMenuItem { Id = 2, Title = "Show Employee",
-                        TargetType=typeof(ShowEmployee),ImageIcon="add.png"},
+                        TargetType=typeof(ShowEmployeePage),ImageIcon="add.png"},
                     new MyPageMasterMenuItem { Id = 3, Title = "Geolocation",
                         TargetType=typeof(ContohGeolocation),ImageIcon="add.png"},
                     new MyPageMasterMenuItem { Id = 4, Title = "List Image",
