@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LatihanXamarin.ContohGeolocation">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblLatitude" FontSize="Large" />
+            <Label x:Name="lblLongitude" FontSize="Large" />
+            <Label x:Name="lblAltitude" FontSize="Large" />
+            <Button x:Name="btnCek" Text="Cek Last Known Posisi" Clicked="btnCek_Clicked" />
+            <Button x:Name="btnCekGeo" Text="Cek Position" Clicked="btnCekGeo_Clicked" />
+            <Button x:Name="btnGeoCoding" Text="Geocoding" Clicked="btnGeoCoding_Clicked" />
+            <Label x:Name="lblReverseGeo" FontSize="Large" />
+            <Button x:Name="btnReverseGeo" Text="Reverse Geo" Clicked="btnReverseGeo_Clicked" />
+
+            <Button x:Name="btnOpenMap" Text="OpenMap" Clicked="btnOpenMap_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
